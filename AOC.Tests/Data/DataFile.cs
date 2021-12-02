@@ -15,8 +15,7 @@ namespace AOC.Tests
         {
             get
             {
-                using var stream = Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream(Filename);
+                using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(Filename);
                 if (stream == null)
                     throw new ArgumentOutOfRangeException(nameof(stream), $"Could not find embedded resource");
 
