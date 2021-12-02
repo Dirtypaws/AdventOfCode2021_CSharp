@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AdventOfCode;
 using AdventOfCode.Puzzles;
+using FluentAssertions;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -25,6 +26,10 @@ namespace AOC.Tests
         {
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day1.Question1(data);
+
+            if (data.Length == 10)
+                result.Should().Be(7);
+
             _output.WriteLine(result.ToString());
 
         }
@@ -36,6 +41,10 @@ namespace AOC.Tests
         {
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day1.Question2(data);
+
+            if (data.Length == 10)
+                result.Should().Be(5);
+
             _output.WriteLine(result.ToString());
         }
 
@@ -46,6 +55,10 @@ namespace AOC.Tests
         {
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day2.Question1(data);
+
+            if (data.Length == 6)
+                result.Should().Be(150);
+
             _output.WriteLine(result.ToString());
 
         }
@@ -57,6 +70,10 @@ namespace AOC.Tests
         { 
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day2.Question2(data);
+
+            if (data.Length == 6)
+                result.Should().Be(900);
+
             _output.WriteLine(result.ToString());
         }
     }
