@@ -9,6 +9,8 @@
     <None Remove="Data\Day1.Sample.txt" />
     <None Remove="Data\Day2.Live.txt" />
     <None Remove="Data\Day2.Sample.txt" />
+    <None Remove="Data\Day5\Live.txt" />
+    <None Remove="Data\Day5\Sample.txt" />
     <None Remove="Data\Day3.Live.txt" />
     <None Remove="Data\Day3.Sample.txt" />
     <None Remove="Data\Day4.Live.txt" />
@@ -20,6 +22,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Day1\Live.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Day5\Live.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Day5\Sample.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Day4\Live.txt">
