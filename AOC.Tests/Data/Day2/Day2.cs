@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using AdventOfCode;
 
-namespace AOC.Tests.Data.Day2
+namespace AOC.Tests.Data
 {
-    public class Sample : DataFile<KeyValuePair<Direction, int>>
+    public class Day2
     {
-        public override string Filename => "AOC.Tests.Data.Day2.Sample.txt";
-
-        public override KeyValuePair<Direction, int> Transform(string line)
+        public class Sample : DataFile<KeyValuePair<Direction, int>>
         {
-            var row = line.Split(' ');
+            public override string Filename => "AOC.Tests.Data.Day2.Sample.txt";
 
-            return new(Enum.Parse<Direction>(row.First(), true),
-                int.Parse(row.Last()));
+            public override KeyValuePair<Direction, int> Transform(string line)
+            {
+                var row = line.Split(' ');
+
+                return new(Enum.Parse<Direction>(row.First(), true),
+                    int.Parse(row.Last()));
+            }
         }
-    }
 
-    public class Live : DataFile<KeyValuePair<Direction, int>>
-    {
-        public override string Filename => "AOC.Tests.Data.Day2.Live.txt";
-
-        public override KeyValuePair<Direction, int> Transform(string line)
+        public class Live : DataFile<KeyValuePair<Direction, int>>
         {
-            var row = line.Split(' ');
+            public override string Filename => "AOC.Tests.Data.Day2.Live.txt";
 
-            return new(Enum.Parse<Direction>(row.First(), true),
-                int.Parse(row.Last()));
+            public override KeyValuePair<Direction, int> Transform(string line)
+            {
+                var row = line.Split(' ');
+
+                return new(Enum.Parse<Direction>(row.First(), true),
+                    int.Parse(row.Last()));
+            }
         }
     }
 }

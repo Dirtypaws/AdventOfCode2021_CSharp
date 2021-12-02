@@ -1,22 +1,25 @@
 ﻿using System;
 
-namespace AOC.Tests.Data.Day3
+namespace AOC.Tests.Data
 {
-    public class Sample : DataFile<int>
+    public class Day3
     {
-        public override string Filename => "AOC.Tests.Data.Day3.Sample.txt";
-        public override int Transform(string line)
+        public class Sample : DataFile<int>
         {
-            throw new NotImplementedException();
+            public override string Filename => "AOC.Tests.Data.Day3.Sample.txt";
+            public override int Transform(string line)
+            {
+                throw new NotImplementedException();
+            }
         }
-    }
 
-    public class Live : DataFile<int>
-    {
-        public override string Filename => "AOC.Tests.Data.Day3.Live.txt";
-        public override int Transform(string line)
+        public class Live : DataFile<int>
         {
-            throw new NotImplementedException();
+            public override string Filename => "AOC.Tests.Data.Day3.Live.txt";
+            public override int Transform(string line)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

@@ -1,20 +1,25 @@
-﻿namespace AOC.Tests.Data.Day1
+﻿namespace AOC.Tests.Data
 {
-    public class Sample : DataFile<int>
+    public class Day1
     {
-        public override string Filename => "AOC.Tests.Data.Day1.Sample.txt";
-        public override int Transform(string line)
+        public class Sample : DataFile<int>
         {
-            return int.Parse(line);
-        }
-    }
+            public override string Filename => "AOC.Tests.Data.Day1.Sample.txt";
 
-    public class Live : DataFile<int>
-    {
-        public override string Filename => "AOC.Tests.Data.Day1.Live.txt";
-        public override int Transform(string line)
+            public override int Transform(string line)
+            {
+                return int.Parse(line);
+            }
+        }
+
+        public class Live : DataFile<int>
         {
-            return int.Parse(line);
+            public override string Filename => "AOC.Tests.Data.Day1.Live.txt";
+
+            public override int Transform(string line)
+            {
+                return int.Parse(line);
+            }
         }
     }
 }
