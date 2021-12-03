@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using AdventOfCode;
 using AdventOfCode.Puzzles;
 using FluentAssertions;
@@ -21,7 +20,7 @@ namespace AOC.Tests
         [Theory]
         [ClassData(typeof(Data.Day1.Sample))]
         [ClassData(typeof(Data.Day1.Live))]
-        public async Task Puzzle1(int[] data)
+        public void Puzzle1(int[] data)
         {
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day1.Question1(data);
@@ -36,7 +35,7 @@ namespace AOC.Tests
         [Theory]
         [ClassData(typeof(Data.Day1.Sample))]
         [ClassData(typeof(Data.Day1.Live))]
-        public async Task Puzzle2(int[] data)
+        public void Puzzle2(int[] data)
         {
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day1.Question2(data);
@@ -50,7 +49,7 @@ namespace AOC.Tests
         [Theory]
         [ClassData(typeof(Data.Day2.Sample))]
         [ClassData(typeof(Data.Day2.Live))]
-        public async Task Puzzle3(KeyValuePair<Direction, int>[] data)
+        public void Puzzle3(KeyValuePair<Direction, int>[] data)
         {
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day2.Question1(data);
@@ -65,13 +64,41 @@ namespace AOC.Tests
         [Theory]
         [ClassData(typeof(Data.Day2.Sample))]
         [ClassData(typeof(Data.Day2.Live))]
-        public async Task Puzzle4(KeyValuePair<Direction, int>[] data)
+        public void Puzzle4(KeyValuePair<Direction, int>[] data)
         { 
             _output.WriteLine($"Records to process: {data.Length}");
             var result = Day2.Question2(data);
 
             if (data.Length == 6)
                 result.Should().Be(900);
+
+            _output.WriteLine(result.ToString());
+        }
+
+        [Theory]
+        [ClassData(typeof(Data.Day3.Sample))]
+        [ClassData(typeof(Data.Day3.Live))]
+        public void Puzzle5(string[] data)
+        { 
+            _output.WriteLine($"Records to process: {data.Length}");
+            var result = Day3.Question1(data);
+
+            if (data.Length == 12)
+                result.Should().Be(198);
+
+            _output.WriteLine(result.ToString());
+        }
+
+        [Theory]
+        [ClassData(typeof(Data.Day3.Sample))]
+        [ClassData(typeof(Data.Day3.Live))]
+        public void Puzzle6(string[] data)
+        { 
+            _output.WriteLine($"Records to process: {data.Length}");
+            var result = Day3.Question2(data);
+
+            if (data.Length == 12)
+                result.Should().Be(230);
 
             _output.WriteLine(result.ToString());
         }
