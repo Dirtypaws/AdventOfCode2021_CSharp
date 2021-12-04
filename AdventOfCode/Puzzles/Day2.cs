@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode.Puzzles
@@ -23,21 +24,21 @@ namespace AdventOfCode.Puzzles
                 switch (dir)
                 {
                     case Direction.Forward:
-                    {
-                        horizontal += value;
-                        depth += aim * value;
-                        break;
-                    }
+                        {
+                            horizontal += value;
+                            depth += aim * value;
+                            break;
+                        }
                     case Direction.Down:
-                    {
-                        aim += value;
-                        break;
-                    }
+                        {
+                            aim += value;
+                            break;
+                        }
                     case Direction.Up:
-                    {
-                        aim += (value * -1);
-                        break;
-                    }
+                        {
+                            aim += (value * -1);
+                            break;
+                        }
                 }
             }
 

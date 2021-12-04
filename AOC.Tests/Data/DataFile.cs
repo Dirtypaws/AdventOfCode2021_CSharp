@@ -11,7 +11,7 @@ namespace AOC.Tests
     {
         public abstract string Filename { get; }
 
-        protected IEnumerable<object[]> Data
+        public IEnumerable<object[]> Data
         {
             get
             {

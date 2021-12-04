@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AdventOfCode;
+using AdventOfCode.Models;
 using AdventOfCode.Puzzles;
 using FluentAssertions;
 using Xunit;
@@ -99,6 +101,32 @@ namespace AOC.Tests
 
             if (data.Length == 12)
                 result.Should().Be(230);
+
+            _output.WriteLine(result.ToString());
+        }
+
+        [Theory]
+        [ClassData(typeof(Data.Day4.Sample))]
+        [ClassData(typeof(Data.Day4.Live))]
+        public void Puzzle7(KeyValuePair<int[], List<BingoCard>>[] data)
+        { 
+            _output.WriteLine($"Records to process: {data.First().Value.Count}");
+            var result = Day4.Question1(data.First());
+
+            result.Should().Be(data.First().Value.Count == 3 ? 4512 : 87456);
+
+            _output.WriteLine(result.ToString());
+        }
+
+        [Theory]
+        [ClassData(typeof(Data.Day4.Sample))]
+        [ClassData(typeof(Data.Day4.Live))]
+        public void Puzzle8(KeyValuePair<int[], List<BingoCard>>[] data)
+        { 
+            _output.WriteLine($"Records to process: {data.First().Value.Count}");
+            var result = Day4.Question2(data.First());
+
+            result.Should().Be(data.First().Value.Count == 3 ? 1924 : 15561);
 
             _output.WriteLine(result.ToString());
         }
