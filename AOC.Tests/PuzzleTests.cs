@@ -298,7 +298,7 @@ namespace AOC.Tests
         public void Puzzle13(int[] input, int expected)
         {
             Enumerable
-                .Range((int)Math.Ceiling(input.Average()) / 2, (int)Math.Ceiling(input.Average()))
+                .Range(input[(int)Math.Floor((double)input.OrderBy(_ => _).Count() / 2)], 1)
                 .Select(i => input.Sum(_ => Math.Abs(i - _)))
                 .Min()
                 .Should()
@@ -363,14 +363,15 @@ namespace AOC.Tests
         {
             var sw = Stopwatch.StartNew();
 
-            Enumerable
-                .Range((int)Math.Ceiling(input.Average()) / 2, (int)Math.Ceiling(input.Average()))
+            var result = Enumerable
+                .Range((int)Math.Floor(input.Average()), 2)
                 .Select(i => input.Sum(_ => Math.Abs(_ - i) * (Math.Abs(_ - i) + 1) / 2))
                 .Min();
                 //.Should()
                 //.Be(expected);
             
             sw.Stop();
+            result.Should().Be(expected);
 
             _output.WriteLine($"Run Time: {sw.ElapsedMilliseconds}");
         }
